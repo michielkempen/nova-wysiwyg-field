@@ -1,0 +1,47 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateWysiwygFieldTables extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('pending_wysiwyg_files', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('draft_id')->index();
+            $table->string('file');
+            $table->string('disk');
+            $table->timestamps();
+        });
+
+        Schema::create('wysiwyg_files', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('model_type');
+            $table->unsignedInteger('model_id');
+            $table->string('file');
+            $table->string('disk');
+            $table->string('url')->index();
+            $table->timestamps();
+
+            $table->index(['model_type', 'model_id']);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('wysiwyg_files');
+        Schema::drop('pending_wysiwyg_files');
+    }
+}
