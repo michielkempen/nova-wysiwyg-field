@@ -70,7 +70,8 @@
 					'bold', 'italic', 'underline', '|',
 					'paragraphFormat', 'quote', '|',
 					'formatOL', 'formatUL', '|',
-					'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable'
+					'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|',
+					'html',
 				],
 				'toolbarButtonsSM': [
 					'bold', 'italic', 'underline', '|',
