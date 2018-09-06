@@ -32,7 +32,7 @@ class WysiwygFieldServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../dist/fonts/' => public_path('nova-assets/fonts')
-        ], 'wysiwyg-field-fonts');
+        ], 'fonts');
 
         $this->app->booted(function () {
             $this->loadRoutes();

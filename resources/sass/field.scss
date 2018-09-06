@@ -1,13 +1,13 @@
-@fa-font-path: "../../nova-assets/fonts/font-awesome";
-@import "~font-awesome/less/font-awesome.less";
+$fa-font-path: "../../nova-assets/fonts/font-awesome" !default;
+@import "~font-awesome/scss/font-awesome.scss";
 
-@root-wysiwyg-class: ~'.nova-wysiwyg-field.fr-box.fr-basic.fr-top';
+$root-wysiwyg-class: '.nova-wysiwyg-field.fr-box.fr-basic.fr-top';
 
 :root {
 
 	// license bar
 
-	@{root-wysiwyg-class} .fr-wrapper > div > a[style*='background: #EF5350'] {
+	#{$root-wysiwyg-class} .fr-wrapper > div > a[style*='background: #EF5350'] {
 		visibility: hidden !important;
 		padding: 0 !important;
 		height: 0 !important;
@@ -15,8 +15,8 @@
 
 	// toolbar
 
-	@{root-wysiwyg-class} .fr-toolbar {
-		border: 1px solid var(--60);
+	#{$root-wysiwyg-class} .fr-toolbar {
+		border: 1px solid var(\-\-60);
 		border-bottom: 0;
 		border-radius: .5rem .5rem 0 0;
 		box-shadow: none;
@@ -24,16 +24,16 @@
 
 	// content
 
-	@{root-wysiwyg-class} .fr-wrapper {
+	#{$root-wysiwyg-class} .fr-wrapper {
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-		border: 1px solid var(--60);
+		border: 1px solid var(\-\-60);
 		border-radius: 0 0 .5rem .5rem;
 
 		.fr-element {
 			font-family: inherit;
 			font-size: 1rem;
 			line-height: 1.5;
-			color: var(--80);
+			color: var(\-\-80);
 
 			> *:first-child {
 				margin-top: 0;
@@ -62,7 +62,8 @@
 			}
 
 			p {
-				margin: .75rem 0;
+				margin-top: .75rem;
+				margin-bottom: .75rem;
 			}
 
 			strong {
@@ -81,48 +82,53 @@
 			pre {
 				font-family: Consolas, monospace;
 				padding: .75rem 1rem;
-				margin: 1.5rem 0;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
 				line-height: 2;
-				background: var(--30);
+				background: var(\-\-30);
 				font-size: .875rem;
 				border-radius: 3px;
 			}
 
 			table {
-				margin: 1.5rem 0;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
 
 				tr td, tr th {
 					padding: .5rem .75rem;
 
 					&.fr-selected-cell {
-						border-color: var(--primary);
+						border-color: var(\-\-primary);
 					}
 				}
 			}
 
 			img {
-				margin: 1.5rem 0;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
 				display: block;
 			}
 
 			blockquote {
-				margin: 1.5rem 0;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
 				color: inherit;
 				border-color: inherit;
 				padding-left: .75rem;
 			}
 
 			a.fr-file {
-				margin: 1.5rem 0;
-				background: var(--30);
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
+				background: var(\-\-30);
 				display: block;
 				padding: .75rem 1rem;
 				border-radius: 3px;
-				color: var(--primary);
+				color: var(\-\-primary);
 				text-decoration: none;
 
 				&:hover {
-					color: var(--primary-dark);
+					color: var(\-\-primary-dark);
 					text-decoration: underline;
 				}
 
@@ -132,7 +138,8 @@
 			}
 
 			span.fr-video {
-				margin: 1.5rem 0;
+				margin-top: 1.5rem;
+				margin-bottom: 1.5rem;
 				text-align: center;
 				position: relative;
 				display: block;
@@ -143,22 +150,22 @@
 
 	// popup
 
-	@{root-wysiwyg-class} .fr-toolbar .fr-popup,
+	#{$root-wysiwyg-class} .fr-toolbar .fr-popup,
 	.fr-popup {
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-		border: 1px solid var(--60);
+		border: 1px solid var(\-\-60);
 		border-radius: .5rem;
-		color: var(--80);
+		color: var(\-\-80);
 
 		.fr-buttons {
 			box-shadow: none;
 			border: none;
-			border-bottom: 1px solid var(--60);
+			border-bottom: 1px solid var(\-\-60);
 		}
 
 		.fr-arrow {
 			top: -6px;
-			border-bottom-color: var(--60);
+			border-bottom-color: var(\-\-60);
 		}
 
 		.fr-input-line {
@@ -166,7 +173,7 @@
 			margin-bottom: 1rem;
 
 			input {
-				border: 1px solid var(--60);
+				border: 1px solid var(\-\-60);
 				border-radius: .5rem;
 				padding: .5rem .75rem;
 				box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
@@ -178,8 +185,8 @@
 		}
 
 		.fr-action-buttons button {
-			background-color: var(--primary);
-			color: var(--white);
+			background-color: var(\-\-primary);
+			color: var(\-\-white);
 			padding: .5rem .75rem;
 			border-radius: .5rem;
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
@@ -187,48 +194,48 @@
 			font-weight: 800;
 
 			&:hover {
-				background-color: var(--primary-dark);
+				background-color: var(\-\-primary-dark);
 			}
 		}
 
 		.fr-table-size .fr-select-table-size > span.hover > span {
-			background: var(--primary-30);
-			border-color: var(--primary);
+			background: var(\-\-primary-30);
+			border-color: var(\-\-primary);
 		}
 	}
 
 	// toolbar buttons
 
-	@{root-wysiwyg-class} .fr-toolbar .fr-command,
-	@{root-wysiwyg-class} .fr-toolbar .fr-command.fr-btn,
-	@{root-wysiwyg-class} .fr-toolbar .fr-command.fr-btn.fr-dropdown,
+	#{$root-wysiwyg-class} .fr-toolbar .fr-command,
+	#{$root-wysiwyg-class} .fr-toolbar .fr-command.fr-btn,
+	#{$root-wysiwyg-class} .fr-toolbar .fr-command.fr-btn.fr-dropdown,
 	.fr-popup .fr-command,
 	.fr-popup .fr-command.fr-btn,
 	.fr-popup .fr-command.fr-btn.fr-dropdown {
-		color: var(--80);
+		color: var(\-\-80);
 
 		&:hover,
 		&:focus,
 		&.fr-active,
 		&.fr-active:hover,
 		&.fr-active:focus {
-			color: var(--primary) !important;
+			color: var(\-\-primary) !important;
 			background: none !important;
 
 			&::after {
-				border-top-color: var(--primary) !important;
+				border-top-color: var(\-\-primary) !important;
 			}
 		}
 
 		&::after {
-			border-top-color: var(--80);
+			border-top-color: var(\-\-80);
 		}
 
 		&.fr-active+.fr-dropdown-menu {
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-			border: 1px solid var(--60);
+			border: 1px solid var(\-\-60);
 			border-radius: .5rem;
-			color: var(--80);
+			color: var(\-\-80);
 		}
 
 		&+.fr-dropdown-menu .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list li * {
@@ -240,7 +247,7 @@
 			line-height: 1rem;
 
 			&.fr-active {
-				color: var(--primary);
+				color: var(\-\-primary);
 				background: none;
 			}
 		}
