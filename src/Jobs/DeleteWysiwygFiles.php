@@ -31,9 +31,9 @@ class DeleteWysiwygFiles
     public function __invoke(Request $request, $model)
     {
         WysiwygFile::where('attachable_type', get_class($model))
-                ->where('attachable_id', $model->getKey())
-                ->get()
-                ->each
-                ->purge();
+            ->where('attachable_id', $model->getKey())
+            ->get()
+            ->each
+            ->purge();
     }
 }
