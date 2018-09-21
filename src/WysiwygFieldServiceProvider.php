@@ -31,7 +31,7 @@ class WysiwygFieldServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
-            __DIR__.'/../dist/fonts/' => public_path('nova-assets/fonts')
+            __DIR__.'/../dist/fonts/' => public_path('vendor/nova/fonts')
         ], 'fonts');
 
         $this->app->booted(function () {
